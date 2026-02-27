@@ -1,0 +1,25 @@
+{
+  "name": "deploy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+    "dependencies": {
+    "express": "^5.2.1",
+    "mongodb": "^7.1.0",
+    "nodemon": "^3.1.14"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharathbdev/deploynodejs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharathbdev/deploynodejs/issues"
+  },
+  "homepage": "https://github.com/bharathbdev/deploynodejs#readme"
+}
