@@ -8,19 +8,23 @@ app.use(express.json());
 let db, users;
 
 async function connectDB() {
-    const uri = "mongodb+srv://bharath:password1234@cluster0.tlwgfmy.mongodb.net/?appName=Cluster0";
-    const client = new MongoClient(uri, {
-        serverApi: {
-            version: ServerApiVersion.v1,
-            strict: true,
-            deprecationErrors: true,
-        }
-    });
-    
-    await client.connect();
-    console.log("Connected to MongoDB!");
-    db = client.db('userdb');
-    users = db.collection('users');
+    try {
+        const uri = "mongodb+srv://bharath:password1234@cluster0.tlwgfmy.mongodb.net/?appName=Cluster0";
+        const client = new MongoClient(uri, {
+            serverApi: {
+                version: ServerApiVersion.v1,
+                strict: true,
+                deprecationErrors: true,
+            }
+        });
+        
+        await client.connect();
+        console.log("Connected to MongoDB!");
+        db = client.db('userdb');
+        users = db.collection('users');
+    } catch (error) {
+        console.error("MongoDB connection failed:", error.message);
+    }
 }
 
 connectDB();
@@ -30,8 +34,16 @@ app.get('/test', (req, res) => {
 });
 
 app.get('/users', async (req, res) => {
-    const allUsers = await users.find({}).toArray();
-    res.json(allUsers);
+    try {
+        if (!users) {
+            return res.status(500).json({error: 'Database not connected'});
+        }
+        const allUsers = await users.find({}).toArray();
+        res.json(allUsers);
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        res.status(500).json({error: 'Failed to fetch users', details: error.message});
+    }
 });
 
 app.post('/users', async (req, res) => {
