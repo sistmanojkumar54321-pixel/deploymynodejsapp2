@@ -1,21 +1,21 @@
 ### Test Endpoint
-GET https://deploynodejs-mu.vercel.app/test
+GET https://deploymynodejsapp24.vercel.app/test
 
 ### Get All Users
-GET http://localhost:3000/users
+GET https://deploymynodejsapp24.vercel.app/users
 
 ### Create New User - Bob
-POST https://deploynodejs-mu.vercel.app/users
+POST https://deploymynodejsapp24.vercel.app/users
 Content-Type: application/json
 
 {
-  "name": "Bob",
+  "name": "Bobgjghj",
   "age": 35
 }
 
 
 ### Update User by ID (Replace with actual MongoDB ObjectId)
-PUT https://deploynodejs-mu.vercel.app/users/1
+PUT https://deploymynodejsapp24.vercel.app/users/1
 Content-Type: application/json
 
 { "id": 1,
@@ -24,11 +24,11 @@ Content-Type: application/json
 }
 
 ### Delete User by ID (Replace with actual MongoDB ObjectId)
-DELETE https://deploynodejs-mu.vercel.app/users/2
+DELETE https://deploymynodejsapp24.vercel.app/users/2
 
 ### Search Users - Case insensitive
-GET https://deploynodejs-mu.vercel.app/search?name=John
+GET https://deploymynodejsapp24.vercel.app/search?name=John
 
 
 ### Get Single User by ID (Replace with actual MongoDB ObjectId)
-GET https://deploynodejs-mu.vercel.app/users/1
+GET https://deploymynodejsapp24.vercel.app/users/1
