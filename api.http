@@ -2,7 +2,7 @@
 GET https://deploynodejs-mu.vercel.app/test
 
 ### Get All Users
-GET https://deploynodejs-mu.vercel.app/users
+GET http://localhost:3000/users
 
 ### Create New User - Bob
 POST https://deploynodejs-mu.vercel.app/users

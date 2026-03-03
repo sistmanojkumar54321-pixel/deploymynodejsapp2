@@ -18,7 +18,7 @@ async function connectDB() {
         return;
     }
 
-    const uri = "mongodb+srv://bharath:password1234@cluster0.tlwgfmy.mongodb.net/?appName=Cluster0";
+        const uri = "mongodb+srv://manoj:password1234@cluster0.qubf9fy.mongodb.net/?appName=Cluster0";
     const client = new MongoClient(uri, {
         serverApi: {
             version: ServerApiVersion.v1,
@@ -87,7 +87,7 @@ app.get('/search', async (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`🚀 Server running on port 3000`);
 });
 
 
